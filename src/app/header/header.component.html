@@ -1,0 +1,19 @@
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  <ul class="navbar-nav">
+    <li class="nav-item">
+      <a class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" routerLink="/weatherReport">Current Weather</a>
+    </li>
+  </ul>
+    <div class="navbar-nav justify-content-end">
+        <ng-template [ngIf]="!user.getUserLoggedIn()">
+            <a class="nav-link" routerLinkActive="active" routerLink="/">Sign-In</a>
+            <a class="nav-link" routerLinkActive="active"  routerLink="/signUp">Sign-Up</a>
+        </ng-template>
+        <ng-template [ngIf]="user.getUserLoggedIn()">
+            <button type="button" class="btn btn-primary" (click)="onClick()">Log Out</button>
+        </ng-template>
+        
+        
+        
+    </div>
+</nav>

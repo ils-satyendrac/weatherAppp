@@ -1,0 +1,16 @@
+input{
+    margin-top: 5%;
+}
+button
+{
+    margin-top: 5%;
+}
+.container-fluid
+{
+    background: linear-gradient(blue, lightskyblue, aqua , lightblue );
+    height: 800px;
+}
+.alert-danger{
+    height: 30px;
+    padding: 0% 0% 0% 5%;
+}

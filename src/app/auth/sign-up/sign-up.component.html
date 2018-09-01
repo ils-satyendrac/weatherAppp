@@ -1,0 +1,39 @@
+<div class="container-fluid">
+    <div class="row justify-content-center align-items-center">
+      <div class="col-lg-6 col-md-6 col-sm-10 justify-content-center" >
+        <hr>
+          <h1 class="text-light">Sign-Up</h1>
+          <hr>
+          <form action="" [formGroup]="signUp" (ngSubmit)="onSubmit()">
+            <input type="text" class="form-control inputSearch" formControlName="firstName" placeholder="First Name">
+            <div class="alert alert-danger" *ngIf="!signUp.get('firstName').valid && signUp.get('firstName').touched">
+                <p>
+                  This Field is required
+                </p>
+            </div>
+            <input type="text" class="form-control inputSearch" formControlName="lastName" placeholder="Last Name">
+            <div class="alert alert-danger" *ngIf="!signUp.get('lastName').valid && signUp.get('lastName').touched">
+                <p>
+                  This Field is required
+                </p>
+            </div>
+            <input type="text" class="form-control inputSearch" formControlName="email" placeholder="Email">
+            <div class="alert alert-danger" *ngIf="!signUp.get('email').valid && signUp.get('email').touched">
+                <p>
+                  Enter a valid Email Address
+                </p>
+            </div>
+            <input type="password" class="form-control inputSearch" formControlName="password" placeholder="Password">
+            <div class="alert alert-danger" *ngIf="!signUp.get('password').valid && signUp.get('password').touched">
+                <p>
+                  password is greater than 6 character
+                </p>
+            </div>
+            <button type="submit" class="btn btn-primary bg-light text-dark" [disabled]="!signUp.valid">Submit</button>
+          </form>
+          <hr>
+          <h4 class="red">{{s}}</h4>
+      </div>
+    </div>
+  </div>
+  

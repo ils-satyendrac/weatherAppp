@@ -1,0 +1,37 @@
+<div class="container-fluid">
+  <div class="row justify-content-center align-items-center">
+    <div class="col-lg-6 col-md-6 col-sm-10 justify-content-center" >
+      <hr>
+
+      <ng-template [ngIf]="user.getRegistrationSuccess()">
+        <div class="alert alert-success">
+          <p>
+            {{msg}}
+          </p>
+        </div>
+      </ng-template>
+      
+        <h1 class="text-light">Sign-In</h1>
+        <hr>
+        <form [formGroup]="signIn" (ngSubmit)="onSubmit()">
+              <input type="text" class="form-control inputSearch" formControlName="email" placeholder="Email">
+              <div class="alert alert-danger"  *ngIf="!signIn.get('email').valid && signIn.get('email').touched">
+                  <p>
+                   Enter a valid Email
+                  </p>
+              </div>
+              <input type="password" class="form-control inputSearch" formControlName="password" placeholder="Password">
+              <div class="alert alert-danger" *ngIf="!signIn.get('password').valid && signIn.get('password').touched">
+                  <p>
+                   Password must be 6 characters long
+                  </p>
+              </div>
+              <button type="submit" class="btn btn-primary bg-light text-dark" [disabled]="!signIn.valid">Submit</button>
+              <h6 class="red">{{s}}</h6>
+        </form>
+        <hr>
+        <p><strong>Not yet a user!</strong><a class="text-dark" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" routerLink="/signUp"><strong>  Sign-Up</strong></a></p>
+        <hr>
+    </div>
+  </div>
+</div>
